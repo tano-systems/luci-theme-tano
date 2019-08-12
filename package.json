@@ -1,0 +1,33 @@
+{
+  "name": "openwrt-tano-theme",
+  "version": "1.0.0",
+  "description": "Tano LUCI theme",
+  "main": "index.js",
+  "dependencies": {
+    "reset-css": "^3.0.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "stylelint": "^9.10.1",
+    "stylelint-order": "^3.0.1",
+    "stylelint-scss": "^3.8.0",
+    "webpack": ">=4.9.1 <=4.19.x",
+    "webpack-cli": "^2.1.4"
+  },
+  "scripts": {
+    "build": "webpack --progress",
+    "build_and_deploy": "rm -rf ./dist && webpack --progress && cd ./buildscripts && ./deploy.sh",
+    "bundle": "rm -rf ./dist && webpack --progress && cd ./buildscripts && ./bundle.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.tano-systems.com:8892/tano/luci-theme-tano.git"
+  },
+  "author": "Victor Polotebnov",
+  "license": "Private"
+}

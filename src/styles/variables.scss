@@ -1,0 +1,104 @@
+$base-font-family: Carlito, sans-serif;
+$base-font-size: 14px;
+$base-line-height: ceil($base-font-size * 1.4);
+$base-font-color: #333333;
+
+$color-main: #008dd2;
+
+$color-blue-base: $color-main;
+$color-blue-darken-5: darken($color-blue-base, 5);
+$color-blue-darken-10: darken($color-blue-base, 10);
+$color-blue-darken-20: darken($color-blue-base, 20);
+$color-blue-darken-25: darken($color-blue-base, 25);
+$color-blue-lighten-5: lighten($color-blue-base, 5);
+$color-blue-lighten-10: lighten($color-blue-base, 10);
+$color-blue-lighten-25: lighten($color-blue-base, 25);
+$color-blue-lighten-30: lighten($color-blue-base, 30);
+$color-blue-lighten-45: lighten($color-blue-base, 45);
+
+$color-gray-base: #333333;
+$color-gray-lighten-10: lighten($color-gray-base, 10);
+$color-gray-lighten-20: lighten($color-gray-base, 20);
+$color-gray-lighten-30: lighten($color-gray-base, 30);
+$color-gray-lighten-40: lighten($color-gray-base, 40);
+$color-gray-lighten-50: lighten($color-gray-base, 50);
+$color-gray-lighten-60: lighten($color-gray-base, 60);
+$color-gray-lighten-65: lighten($color-gray-base, 65);
+$color-gray-lighten-70: lighten($color-gray-base, 70);
+$color-gray-lighten-75: lighten($color-gray-base, 75);
+
+$color-red-base: #d2323e;
+$color-red-darken-5: darken($color-red-base, 8);
+$color-red-darken-10: darken($color-red-base, 10);
+$color-red-lighten-5: lighten($color-red-base, 8);
+$color-red-lighten-10: lighten($color-red-base, 10);
+$color-red-lighten-20: lighten($color-red-base, 20);
+$color-red-lighten-30: lighten($color-red-base, 30);
+$color-red-lighten-40: lighten($color-red-base, 40);
+
+$color-orange-base: #ff8800;
+$color-orange-lighten-10: lighten($color-orange-base, 10);
+$color-orange-lighten-30: lighten($color-orange-base, 30);
+$color-orange-lighten-40: lighten($color-orange-base, 40);
+$color-orange-darken-10: darken($color-orange-base, 10);
+
+$color-green-base: #018a00;
+$color-green-darken-5: darken($color-green-base, 5);
+$color-green-darken-10: darken($color-green-base, 10);
+$color-green-lighten-5: lighten($color-green-base, 5);
+$color-green-lighten-10: lighten($color-green-base, 10);
+$color-green-lighten-20: lighten($color-green-base, 20);
+$color-green-lighten-30: lighten($color-green-base, 30);
+$color-green-lighten-40: lighten($color-green-base, 40);
+$color-green-lighten-50: lighten($color-green-base, 50);
+$color-green-lighten-60: lighten($color-green-base, 60);
+
+$transition-time: 0.3s;
+
+$border-radius: 5px;
+
+$content-width: 1180px;
+
+$menu-width: 250px;
+$input-height: $base-line-height * 1.7;
+$main-content-padding: 10px;
+
+$cbi-title-width: ($content-width - $menu-width) / 3;
+$input-width: $cbi-title-width;
+$input-font-size: ceil($base-font-size * 0.9);
+
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1200px;
+
+$menu-icon-size: 5px;
+
+$button-font-size: $base-font-size;
+
+$logo-size: 42px;
+$sidemenu-toggle-icon-size: ceil($logo-size * 0.8);
+$header-additional-info-height: 30px;
+$header-additional-info-spacing: 10px;
+$header-controls-height: $logo-size + 16px;
+$header-full-height: $header-controls-height + $header-additional-info-height;
+
+$header-action-icon-size: $base-font-size * 1.6;
+
+$changes-indicator-color: $color-orange-base;
+$changes-indicator-color-hover: $color-orange-lighten-10;
+
+$change-legend-size: 32px;
+
+$changes-add-border: solid 1px $color-green-lighten-20;
+$changes-add-background-color: $color-green-lighten-60;
+
+$changes-remove-border: solid 1px $color-red-lighten-30;
+$changes-remove-background-color: $color-red-lighten-40;
+
+$changes-option-border: solid 1px $color-gray-lighten-60;
+$changes-option-background-color: $color-gray-lighten-75;
+
+$cbi-dropdown-height: $input-height - 2px;
+$cbi-dropdown-input-height: ceil($cbi-dropdown-height * 0.8);
+
+$ifacebox-margin: 8px;

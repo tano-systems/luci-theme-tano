@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Carlito';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Carlito Italic'), local('Carlito-Italic'), url('../tano/fonts/Carlito-Italic.woff2') format('woff2'), url('../tano/fonts/Carlito-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Carlito';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Carlito Bold'), local('Carlito-Bold'), url('../tano/fonts/Carlito-Bold.woff2') format('woff2'), url('../tano/fonts/Carlito-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Carlito';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Carlito'), url('../tano/fonts/Carlito.woff2') format('woff2'), url('../tano/fonts/Carlito.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Carlito';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Carlito Bold Italic'), local('Carlito-BoldItalic'), url('../tano/fonts/Carlito-BoldItalic.woff2') format('woff2'), url('../tano/fonts/Carlito-BoldItalic.woff') format('woff');
+}

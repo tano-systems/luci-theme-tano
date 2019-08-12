@@ -1,0 +1,338 @@
+@import "variables";
+@import "mixins";
+
+.cbi-map-descr {
+  color: $color-gray-lighten-30;
+}
+
+.cbi-section-node {
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 10px;
+  }
+}
+
+.cbi-map {
+  margin-bottom: 20px;
+
+  & + .cbi-map {
+    margin-top: 50px;
+  }
+}
+
+.cbi-value {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  @media screen and (min-width: $breakpoint-md) {
+    display: block;
+
+    &::before {
+      content: "";
+      display: block;
+    }
+
+    &::after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+  }
+}
+
+.cbi-value-title {
+  color: $color-gray-lighten-10;
+  display: block;
+  float: left;
+  font-weight: bolder;
+  margin-bottom: 3px;
+  padding-top: ($input-height - $base-line-height) / 2;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-right: 16px;
+    min-width: $cbi-title-width;
+    text-align: right;
+    width: $cbi-title-width;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.cbi-value-description,
+.cbi-map-descr,
+.cbi-section-descr {
+  color: $color-gray-lighten-40;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.cbi-value-description {
+  font-size: $base-font-size * 0.9;
+  line-height: $base-line-height * 0.9;
+  margin-top: 5px;
+}
+
+.cbi-checkbox + .cbi-value-description {
+  margin-top: 0;
+}
+
+.cbi-section {
+  margin-top: 20px;
+
+  legend {
+    border-bottom: solid 2px $color-blue-base;
+    font-size: $base-font-size * 1.2;
+    line-height: $base-line-height * 1.2;
+    margin: 10px 0;
+    padding: 5px 0;
+    width: 100%;
+  }
+
+  h3 {
+    margin-bottom: 5px;
+  }
+}
+
+.cbi-progressbar {
+  background-color: $color-gray-lighten-70;
+  border-radius: 12px;
+  height: 24px;
+  overflow: hidden;
+  position: relative;
+
+  div {
+    background-color: $color-blue-lighten-30;
+    height: 100%;
+  }
+
+  &::after {
+    align-items: center;
+    bottom: 0;
+    content: attr(title);
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.cbi-value-field > .cbi-progressbar {
+  flex-basis: 100%;
+}
+
+.cbi-section-actions > div {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+
+  input[type="button"],
+  input[type="submit"],
+  div.cbi-button {
+    margin-bottom: 5px;
+  }
+}
+
+.cbi-value-field {
+  display: flex;
+  flex-wrap: wrap;
+
+  .cbi-value-description {
+    width: 100%;
+  }
+
+  label {
+    display: flex;
+    width: 100%;
+
+    .cbi-input-radio,
+    .cbi-input-checkbox {
+      height: $base-line-height;
+      margin-right: 8px;
+    }
+  }
+
+  & > div[id] {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  & > div.cbi-dynlist {
+    display: block;
+    width: 100%;
+  }
+
+  & > div + div {
+    margin-top: 5px;
+  }
+}
+
+.cbi-upload-info {
+  color: $color-green-lighten-5;
+  margin: 7px 0 5px 0;
+  width: 100%;
+}
+
+.cbi-input-radio + label,
+input[type="radio"] + label {
+  display: inline-flex;
+  margin-left: 5px;
+}
+
+.cbi-page-actions {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    border-radius: 3px;
+    display: block;
+    text-align: right;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 0 12px;
+  }
+
+  form {
+    display: inline-block;
+  }
+
+  .cbi-button {
+    width: 100%;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      width: auto;
+    }
+  }
+
+  form + form,
+  .cbi-button + .cbi-button {
+    margin-top: 5px;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      margin-left: 3px;
+    }
+  }
+}
+
+.cbi-value-field-password {
+  display: flex;
+  flex-wrap: wrap;
+
+  input[type="password"] {
+    flex-shrink: 1;
+    width: auto;
+  }
+
+  .cbi-value-description {
+    &::before {
+      width: 100%;
+    }
+
+    &#passstrength > span {
+      padding-left: 4px;
+    }
+  }
+}
+
+.cbi-dynlist {
+  .item {
+    border: solid 1px $color-gray-lighten-70;
+    border-radius: $border-radius;
+    margin: 5px 0;
+    padding: 5px 10px;
+    pointer-events: none;
+    position: relative;
+    transition: $transition-time;
+
+    &::after {
+      align-items: center;
+      background-color: #ffffff;
+      border-left: solid 1px $color-gray-lighten-70;
+      bottom: 0;
+      color: $color-red-base;
+      content: "\D7";
+      cursor: pointer;
+      display: flex;
+      padding: 5px 10px;
+      pointer-events: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &:hover {
+      border-color: $color-red-lighten-10;
+    }
+  }
+}
+
+.cbi-optionals,
+.cbi-section-create {
+  display: flex;
+
+  @media screen and (min-width: $breakpoint-md) {
+    margin-left: $cbi-title-width + 16px;
+  }
+}
+
+.cbi-section-create {
+  justify-content: flex-end;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  & > div {
+    display: flex;
+    margin: 0 5px 0 10px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    margin-right: 10px;
+  }
+}
+
+.cbi-section-remove {
+  margin-top: 10px;
+  padding: 10px 0;
+
+  @media screen and (min-width: $breakpoint-md) {
+    margin-right: 10px;
+  }
+}
+
+.cbi-section-node + .cbi-section-remove {
+  border-top: dotted 1px $color-gray-lighten-60;
+  padding: 20px 10px 10px 10px;
+}
+
+.cbi-section-error {
+  border: solid 1px;
+  border-radius: $border-radius;
+  padding: 5px 10px;
+
+  @include alert($color-red-darken-5, $color-red-lighten-30, $color-red-darken-5);
+}
+
+.cbi-value-error {
+  input[type="text"],
+  input[type="password"],
+  select,
+  textarea {
+    border-color: $color-red-lighten-10;
+
+    &:focus {
+      @include input-shadow($color-red-lighten-10);
+    }
+  }
+
+  .cbi-value-title {
+    color: $color-red-lighten-10;
+  }
+}

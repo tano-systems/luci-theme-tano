@@ -1,0 +1,118 @@
+@import "variables";
+
+.table-wrapper,
+.graph-wrapper {
+  overflow-x: auto;
+
+  @media screen and (min-width: $breakpoint-md) {
+    overflow-x: inherit;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  display: table;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+  }
+}
+
+.td,
+.th {
+  display: table-cell;
+  line-height: $base-line-height;
+  min-width: 120px;
+  padding: 8px;
+  vertical-align: middle;
+
+  @media screen and (min-width: $breakpoint-md) {
+    min-width: unset;
+  }
+
+  &[width="33%"] {
+    width: 33%;
+  }
+
+  &.cbi-value-field var {
+    color: $color-blue-base;
+    font-style: italic;
+  }
+}
+
+.td {
+  border-top: solid 1px $color-gray-lighten-70 !important;
+}
+
+.th {
+  background-color: $color-gray-lighten-70;
+  font-weight: bold;
+}
+
+.tr {
+  display: table-row;
+
+  &.placeholder {
+    height: 30px;
+
+    > .td {
+      font-style: italic;
+      left: 0;
+      position: absolute;
+      right: 0;
+      text-align: center;
+    }
+  }
+
+  &.cbi-rowstyle-2 {
+    background-color: $color-gray-lighten-75;
+  }
+}
+
+.cbi-section-table-descr {
+  .th {
+    background-color: $color-gray-lighten-75;
+    color: $color-gray-lighten-20;
+    font-size: $base-font-size * 0.85;
+    line-height: $base-line-height * 0.85;
+    padding: 5px 8px;
+  }
+}
+
+.cbi-section-table-titles {
+  background-color: $color-gray-lighten-70;
+}
+
+.cbi-section-table-row[data-title],
+.cbi-section-table-titles.named,
+.cbi-section-table-descr.named {
+  &::before {
+    border-top: solid 1px $color-gray-lighten-70;
+    content: attr(data-title);
+    display: table-cell;
+    font-weight: bold;
+    padding: 0 5px;
+    vertical-align: middle;
+  }
+}
+
+.td.cbi-value-field {
+  display: table-cell;
+  width: auto;
+}
+
+.tr.drag-over-above,
+.tr.drag-over-below {
+  border: 2px solid $color-blue-base;
+  border-width: 2px 0 0 0;
+}
+
+.tr.drag-over-below {
+  border-width: 0 0 2px 0;
+}

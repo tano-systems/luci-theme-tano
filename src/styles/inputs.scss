@@ -1,0 +1,141 @@
+@import "variables";
+@import "mixins";
+
+input[type="text"],
+input[type="password"],
+select {
+  color: $color-gray-base;
+  font-family: $base-font-family;
+  height: $input-height;
+  padding: 0 10px;
+  width: 100%;
+
+  &::placeholder {
+    color: $color-gray-lighten-50;
+  }
+}
+
+textarea {
+  font-family: monospace;
+  padding: 5px 8px;
+  resize: vertical;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  background-color: white;
+  border: solid 1px $color-gray-lighten-70;
+  border-radius: $border-radius;
+  flex-basis: 45%;
+  flex-grow: 1;
+  font-size: $input-font-size;
+  outline: none;
+  position: relative;
+  transition-duration: $transition-time;
+  transition-property: border, box-shadow;
+
+  &:focus {
+    @include input-shadow;
+
+    border: solid 1px $color-blue-base;
+  }
+
+  &.cbi-input-invalid {
+    border-color: $color-red-lighten-10;
+
+    &:focus {
+      @include input-shadow($color-red-lighten-10);
+    }
+  }
+}
+
+input[type="checkbox"] {
+  height: $input-height;
+  margin: 0;
+}
+
+input[type="radio"] {
+  margin: 0;
+}
+
+input[type="file"] {
+  cursor: pointer;
+  display: block;
+  margin: 5px 0;
+}
+
+input[readonly],
+input[disabled],
+textarea[readonly],
+textarea[disabled] {
+  cursor: text;
+}
+
+select[readonly],
+select[disabled] {
+  cursor: not-allowed;
+}
+
+input[readonly],
+select[readonly],
+textarea[readonly],
+input[disabled],
+select[disabled],
+textarea[disabled] {
+  background-color: $color-gray-lighten-70;
+  border-color: $color-gray-lighten-60;
+
+  &:focus {
+    border-color: $color-gray-lighten-60;
+    box-shadow: none;
+  }
+}
+
+select[multiple] {
+  height: auto;
+
+  option {
+    padding: 5px 0;
+  }
+}
+
+select + .cbi-button,
+input[type="text"] + .cbi-button,
+input[type="password"] + .cbi-button {
+  align-items: center;
+  border-radius: 3px;
+  display: inline-flex;
+  margin-bottom: 5px;
+  margin-left: 3px;
+  text-align: center;
+}
+
+input[type="text"] + select {
+  width: auto;
+}
+
+.cbi-value-error {
+  /* stylelint-disable-next-line no-descending-specificity */
+  select,
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    border-color: $color-red-lighten-10;
+
+    &:focus {
+      @include input-shadow($color-red-lighten-10);
+    }
+  }
+
+  .cbi-value-title {
+    color: $color-red-lighten-10;
+  }
+}
+
+.graph-controls {
+  align-items: stretch;
+  display: flex;
+}

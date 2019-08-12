@@ -1,0 +1,9 @@
+.DS_Store
+*.swp
+*.log
+buildscripts/env
+.idea/
+node_modules/
+bundle/
+dist/
+tmp/

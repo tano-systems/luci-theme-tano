@@ -1,0 +1,108 @@
+@import "variables";
+
+.uci-change-legend {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin-top: 8px;
+
+  ins,
+  del {
+    text-decoration: none;
+  }
+}
+
+.uci-change-legend-label {
+  align-items: center;
+  display: flex;
+  white-space: nowrap;
+  width: 50%;
+
+  @media screen and (min-width: $breakpoint-md) {
+    width: 25%;
+  }
+
+  ins,
+  del {
+    border-radius: $border-radius;
+    display: inline-block;
+    height: $change-legend-size;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    width: $change-legend-size;
+  }
+
+  ins {
+    background-color: $changes-add-background-color;
+    border: $changes-add-border;
+  }
+
+  del {
+    background-color: $changes-remove-background-color;
+    border: $changes-remove-border;
+  }
+
+  var {
+    align-items: center;
+    background-color: $changes-option-background-color;
+    border: $changes-option-border;
+    border-radius: $border-radius;
+    display: inline-flex;
+    height: $change-legend-size;
+    justify-content: center;
+    margin-right: 5px;
+    width: $change-legend-size;
+
+    ins,
+    del {
+      display: block;
+      height: $change-legend-size * 0.7;
+      margin: 0;
+      width: $change-legend-size * 0.7;
+    }
+  }
+}
+
+/* stylelint-disable no-descending-specificity */
+.uci-change-list {
+  font-family: monospace;
+
+  ins,
+  del {
+    border-radius: $border-radius;
+    display: block;
+    margin-bottom: 3px;
+    padding: 3px 8px;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  ins {
+    background-color: $changes-add-background-color;
+    border: $changes-add-border;
+    color: $color-green-darken-10;
+  }
+
+  del {
+    background-color: $changes-remove-background-color;
+    border: $changes-remove-border;
+    color: $color-red-darken-10;
+  }
+
+  /* stylelint-enable no-descending-specificity */
+
+  var {
+    background-color: $changes-option-background-color;
+    border: $changes-option-border;
+    border-radius: $border-radius;
+    display: block;
+    margin-bottom: 3px;
+    padding: 5px;
+
+    ins,
+    del {
+      border-radius: $border-radius;
+      margin: 0;
+    }
+  }
+}

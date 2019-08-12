@@ -1,0 +1,34 @@
+@import "variables";
+
+@mixin h($font-coefficient) {
+  font-size: $base-font-size * $font-coefficient;
+  font-weight: bold;
+  line-height: $base-font-size * $font-coefficient * 1.3;
+  margin: ceil($font-coefficient * 7px) 0;
+}
+
+@mixin button($bg-color, $bg-hover-color, $bg-active-color) {
+  background-color: $bg-color;
+
+  &:hover {
+    background-color: $bg-hover-color;
+  }
+
+  &:active {
+    background-color: $bg-active-color;
+  }
+}
+
+@mixin alert($color, $bg-color, $border-color) {
+  background-color: $bg-color;
+  border-color: $border-color;
+  color: $color;
+}
+
+@mixin tooltip-shadow {
+  box-shadow: 0 1px 3px 0 $color-gray-lighten-30;
+}
+
+@mixin input-shadow($shadow-color: $color-blue-base) {
+  box-shadow: 0 0 0 1px $shadow-color;
+}

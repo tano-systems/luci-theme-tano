@@ -1,0 +1,37 @@
+@import "variables";
+@import "mixins";
+
+.alert-message {
+  border: solid 1px;
+  border-radius: $border-radius;
+  margin: 5px 0;
+  padding: 5px 8px;
+
+  @include alert($color-gray-lighten-30, $color-gray-lighten-70, $color-gray-lighten-30);
+
+  a,
+  abbr {
+    color: $color-gray-lighten-10;
+  }
+
+  a:hover {
+    color: $color-gray-lighten-20;
+  }
+
+  &.info {
+    @include alert($color-blue-darken-10, $color-blue-lighten-45, $color-blue-darken-10);
+  }
+
+  &.warning {
+    @include alert($color-orange-darken-10, $color-orange-lighten-40, $color-orange-darken-10);
+  }
+
+  &.success {
+    @include alert($color-green-darken-5, $color-green-lighten-60, $color-green-darken-5);
+  }
+
+  &.error,
+  &.danger {
+    @include alert($color-red-darken-5, $color-red-lighten-40, $color-red-darken-5);
+  }
+}

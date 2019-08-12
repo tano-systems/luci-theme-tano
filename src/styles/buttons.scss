@@ -1,0 +1,62 @@
+@import "variables";
+@import "mixins";
+
+.btn,
+.cbi-button,
+a.cbi-button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @include tooltip-shadow;
+
+  align-items: center;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: $base-font-family;
+  font-size: $button-font-size;
+  font-weight: normal;
+  height: $input-height;
+  justify-content: center;
+  line-height: $input-height;
+  outline: none;
+  padding: 0 10px;
+  transition: $transition-time;
+  white-space: nowrap;
+}
+
+.btn {
+  &.success {
+    @include button($color-green-base, $color-green-lighten-5, $color-green-darken-5);
+  }
+
+  &.info {
+    @include button($color-blue-base, $color-blue-lighten-5, $color-blue-darken-5);
+  }
+
+  &.danger {
+    @include button($color-orange-base, $color-orange-lighten-10, $color-orange-darken-10);
+  }
+}
+
+.btn,
+.cbi-button {
+  @include button($color-blue-darken-10, $color-blue-base, $color-blue-darken-10);
+
+  &:disabled {
+    @include button($color-gray-lighten-70, $color-gray-lighten-70, $color-gray-lighten-70);
+
+    cursor: not-allowed;
+  }
+}
+
+.btn.reset,
+.btn.error,
+.cbi-button-reset,
+.cbi-button-remove,
+.cbi-button-negative,
+.cbi-section-remove input[type="submit"] {
+  @include button($color-red-base, $color-red-lighten-5, $color-red-darken-5);
+}

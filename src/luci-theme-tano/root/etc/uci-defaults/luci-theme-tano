@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ "$PKG_UPGRADE" != 1 ]; then
+	uci batch <<-EOF
+		set luci.themes.Tano=/luci-static/tano
+		commit luci
+	EOF
+fi
+exit 0

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54" height="50" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.1" viewBox="0 0 18.338692 16.674329" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata>
+ <g transform="translate(.16935 -.16602)">
+  <g fill="#008dd2">
+   <path class="fil0" d="m7 0c7 3 9 9 2 10 9 0 8-6-2-10z"/>
+   <path class="fil0" d="m10 0c7 3 9 9 2 10 9 0 8-6-2-10z"/>
+   <path class="fil0" d="m14 17c-7-3-9-9-2-10-9 0-8 6 2 10z"/>
+   <path class="fil0" d="m11 17c-7-3-9-9-2-10-9 0-8 6 2 10z"/>
+   <path class="fil0" d="m8 17c-7-3-9-9-2-10-9 0-8 6 2 10z"/>
+  </g>
+ </g>
+</svg>

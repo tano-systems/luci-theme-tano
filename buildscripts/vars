@@ -1,0 +1,9 @@
+THEME_NAME="luci-theme-tano"
+
+SCRIPT_DIR=$(cd ../ && pwd)
+
+SRC_DIR=${SCRIPT_DIR}/src
+
+DIST_DIR=${SCRIPT_DIR}/dist
+
+THEME_SRC_DIR=${SRC_DIR}/${THEME_NAME}

@@ -1,0 +1,218 @@
+@import "variables";
+@import "mixins";
+
+.cbi-dropdown {
+  border: solid 1px $color-gray-lighten-70;
+  border-radius: $border-radius;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  position: relative;
+  width: 100%;
+
+  label {
+    margin: 0 !important;
+  }
+
+  & > ul {
+    display: flex;
+    list-style: none;
+    margin: 0 !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width: 100%;
+
+    &.preview {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    & > li {
+      align-items: center;
+      align-self: center;
+      display: none;
+      flex-grow: 1;
+      flex-shrink: 1;
+      height: $cbi-dropdown-height;
+      overflow: hidden;
+      padding: 0 8px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &:focus {
+        outline: none;
+      }
+
+      &[unselectable] {
+        cursor: not-allowed;
+
+        > label {
+          cursor: not-allowed;
+        }
+      }
+
+      &[placeholder] {
+        color: $color-gray-lighten-50;
+        display: none;
+      }
+
+      & > form {
+        display: none;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+
+        & > input[type="checkbox"] {
+          margin: 0 8px 0 0;
+        }
+      }
+
+      img {
+        margin: 0 10px;
+        vertical-align: middle;
+      }
+
+      span,
+      em {
+        margin-right: 8px;
+      }
+
+      input[type="text"] {
+        height: $cbi-dropdown-input-height;
+        width: 100%;
+
+        @media screen and (min-width: $breakpoint-md) {
+          width: auto;
+        }
+      }
+
+      .hide-open {
+        display: block;
+      }
+
+      .hide-close {
+        display: none;
+      }
+    }
+  }
+
+  & > .open {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    line-height: $cbi-dropdown-height;
+    padding: 0 5px;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & > .more {
+    color: $color-gray-lighten-50;
+    display: none;
+    height: $cbi-dropdown-height;
+    outline: none;
+    padding: 0 10px;
+  }
+
+  &[empty] > ul {
+    max-width: 1px;
+  }
+}
+
+.cbi-dropdown > ul > li[display]:not([display="0"]) {
+  border-left: 1px solid $color-gray-lighten-50;
+}
+
+.cbi-dropdown[open] {
+  @include input-shadow;
+
+  border: solid 1px $color-blue-base;
+}
+
+.cbi-dropdown[open] > ul.dropdown {
+  @include tooltip-shadow;
+
+  background: #ffffff;
+  display: block;
+  left: 0 !important;
+  min-width: 100%;
+  position: absolute;
+  right: 0 !important;
+  width: 100%;
+  z-index: 1000;
+
+  @media screen and (min-width: $breakpoint-md) {
+    left: auto !important;
+    max-width: none;
+    min-width: 100%;
+    right: auto !important;
+    width: auto;
+  }
+}
+
+/* stylelint-disable no-descending-specificity */
+.cbi-dropdown > ul > li[display],
+.cbi-dropdown[open] > ul.preview,
+.cbi-dropdown[open] > ul.dropdown > li,
+.cbi-dropdown[multiple] > ul > li > label,
+.cbi-dropdown[multiple][open] > ul.dropdown > li,
+.cbi-dropdown[multiple][more] > .more,
+.cbi-dropdown[multiple][empty] > .more {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+}
+
+.cbi-dropdown[open] > ul.dropdown > li {
+  border-bottom: solid 1px $color-gray-lighten-70;
+}
+
+.cbi-dropdown[empty] > ul > li,
+.cbi-dropdown[optional][open] > ul.dropdown > li[placeholder],
+.cbi-dropdown[multiple][open] > ul.dropdown > li > form {
+  display: flex;
+}
+
+/* stylelint-enable no-descending-specificity */
+
+.cbi-dropdown[open] > ul.dropdown > li .hide-open { display: none; }
+.cbi-dropdown[open] > ul.dropdown > li .hide-close { display: block; }
+
+.cbi-dropdown[open] > ul.dropdown > li[selected] {
+  background-color: $color-gray-lighten-70;
+}
+
+.cbi-dropdown[open] > ul.dropdown > li.focus {
+  background-color: $color-gray-lighten-75;
+}
+
+.cbi-dropdown[open] > ul.dropdown > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.cbi-dropdown[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.td.cbi-value-field {
+  .cbi-dropdown {
+    width: auto;
+  }
+}
+
+.cbi-value-field {
+  div[id].cbi-dropdown {
+    flex-wrap: nowrap;
+  }
+}

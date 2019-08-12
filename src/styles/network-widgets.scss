@@ -1,0 +1,150 @@
+@import "variables";
+@import "mixins";
+
+.ifacebadge {
+  align-items: center;
+  background-color: $color-gray-lighten-75;
+  border: solid 1px $color-gray-lighten-60;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 8px;
+
+  img {
+    align-self: center;
+    height: auto !important;
+    margin: 5px 10px;
+    width: auto !important;
+  }
+
+  > small {
+    line-height: $base-font-size;
+    margin: 5px 10px;
+    text-align: center;
+    white-space: nowrap;
+
+    > img {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  > span {
+    padding: 5px 10px;
+  }
+}
+
+.cbi-value-field > .ifacebadge {
+  width: 100%;
+}
+
+.ifacebox {
+  @include tooltip-shadow;
+
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: $ifacebox-margin;
+  overflow: hidden;
+
+  .ifacebadge {
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 0;
+  }
+}
+
+.ifacebox-head {
+  background-color: $color-gray-lighten-75;
+  padding: 3px;
+
+  &.active {
+    strong {
+      &::after {
+        background-color: $color-green-lighten-10;
+        border-radius: 5px;
+        content: "";
+        display: inline-block;
+        height: 10px;
+        margin-left: 5px;
+        width: 10px;
+      }
+    }
+  }
+}
+
+.ifacebox-body {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  small {
+    width: 100%;
+  }
+
+  & > span {
+    padding: 0 5px;
+  }
+
+  &.left {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .cbi-tooltip {
+    display: none;
+
+    @media screen and (min-width: $breakpoint-md) {
+      display: flex;
+    }
+  }
+}
+
+#upstream_status_table,
+#wifi_status_table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    flex-direction: row;
+  }
+
+  .ifacebox {
+    flex-grow: 1;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      flex-basis: 48%;
+      flex-grow: 0;
+    }
+  }
+
+  .ifacebox-body {
+    & > span {
+      order: 1;
+      padding: 10px;
+    }
+  }
+}
+
+.zonebadge {
+  align-items: center;
+  border-radius: $border-radius;
+  display: flex;
+  padding: 3px 8px;
+
+  .ifacebadge {
+    background: transparent;
+    border: none;
+  }
+}
+
+.zone-forwards {
+  display: flex;
+  justify-content: space-between;
+}

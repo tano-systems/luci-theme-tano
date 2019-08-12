@@ -1,0 +1,81 @@
+@import "variables";
+
+[data-tab-active="true"] {
+  display: block;
+}
+
+[data-tab-active="false"] {
+  display: none;
+}
+
+.cbi-tabmenu,
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  padding: 0;
+
+  li {
+    align-items: center;
+    border-bottom: solid 3px $color-gray-lighten-70;
+    display: inline-flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 4px 1px;
+    text-align: center;
+    transition: $transition-time;
+
+    a {
+      color: $color-gray-lighten-30;
+      cursor: pointer;
+      display: block;
+      font-size: $base-font-size * 1.05;
+      font-weight: normal;
+      line-height: 1.8 * $base-line-height;
+      padding: 0 10px;
+      text-decoration: none;
+      transition: $transition-time;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    &[data-errors] {
+      a {
+        width: auto;
+      }
+
+      &::after {
+        background-color: $color-red-lighten-10;
+        border-radius: $base-line-height / 2;
+        color: #ffffff;
+        content: attr(data-errors);
+        height: $base-line-height;
+        min-width: $base-line-height;
+      }
+    }
+
+    &:hover {
+      background-color: $color-gray-lighten-75;
+    }
+
+    &.cbi-tab,
+    &.active {
+      a {
+        color: $color-blue-base;
+      }
+
+      border-color: $color-blue-base;
+    }
+
+    &.cbi-tab-disabled {
+      &:hover {
+        border-color: $color-gray-lighten-60;
+      }
+    }
+  }
+}
+
+.cbi-tab-descr {
+  color: $color-gray-lighten-30;
+  margin-bottom: 10px;
+}

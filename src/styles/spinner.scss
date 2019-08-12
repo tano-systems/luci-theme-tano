@@ -1,0 +1,15 @@
+.spinning {
+  padding-left: 32px !important;
+  position: relative;
+}
+
+.spinning::before {
+  background: url(../resources/icons/loading.gif) no-repeat center;
+  background-size: 16px;
+  bottom: 0;
+  content: " ";
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+}
