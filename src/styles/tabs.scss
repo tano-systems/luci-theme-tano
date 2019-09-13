@@ -1,5 +1,9 @@
 @import "variables";
 
+[data-tab-title] {
+  display: none;
+}
+
 [data-tab-active="true"] {
   display: block;
 }

@@ -25,6 +25,10 @@ input[type="submit"] {
   padding: 0 10px;
   transition: $transition-time;
   white-space: nowrap;
+
+  > img {
+    margin-right: 6px;
+  }
 }
 
 .btn {
@@ -39,6 +43,10 @@ input[type="submit"] {
   &.danger {
     @include button($color-orange-base, $color-orange-lighten-10, $color-orange-darken-10);
   }
+}
+
+a.btn {
+  color: #ffffff;
 }
 
 .btn,

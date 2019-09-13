@@ -1,6 +1,15 @@
 @import "variables";
 @import "mixins";
 
+div[id *= "-ifc-description"] {
+  display: flex;
+  flex-flow: column;
+
+  > br {
+    display: none;
+  }
+}
+
 .ifacebadge {
   align-items: center;
   background-color: $color-gray-lighten-75;
@@ -60,6 +69,7 @@
 .ifacebox-head {
   background-color: $color-gray-lighten-75;
   padding: 3px;
+  text-align: center;
 
   &.active {
     strong {
@@ -81,6 +91,7 @@
   flex-grow: 1;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
 
   small {
     width: 100%;
