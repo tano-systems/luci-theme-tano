@@ -55,7 +55,7 @@ a.btn {
 
   &:disabled {
     @include button($color-gray-lighten-70, $color-gray-lighten-70, $color-gray-lighten-70);
-
+    color: #888;
     cursor: not-allowed;
   }
 }
