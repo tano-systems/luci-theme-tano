@@ -98,6 +98,7 @@
 }
 
 .cbi-progressbar {
+  @include tooltip-shadow;
   background-color: $color-gray-lighten-70;
   border-radius: 12px;
   height: 24px;
