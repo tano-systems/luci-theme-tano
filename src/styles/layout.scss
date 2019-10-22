@@ -251,19 +251,6 @@ ol {
 
   img {
     height: $logo-size;
-    width: $logo-size;
-  }
-
-  .label {
-    display: none;
-
-    @media screen and (min-width: $breakpoint-sm) {
-      color: $color-gray-lighten-30;
-      display: block;
-      font-size: $base-font-size * 1.6;
-      font-weight: 300;
-      margin-left: 10px;
-    }
   }
 }
 
