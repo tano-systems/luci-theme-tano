@@ -116,7 +116,8 @@ div[id *= "-ifc-description"] {
 }
 
 #upstream_status_table,
-#wifi_status_table {
+#wifi_status_table,
+.network-status-table {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
