@@ -128,16 +128,21 @@
 }
 
 .cbi-section-actions > div {
-  align-items: stretch;
   display: flex;
-  flex-direction: column;
   text-align: right;
+
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 
   button,
   input[type="button"],
   input[type="submit"],
   div.cbi-button {
     margin-bottom: 5px;
+    margin-left: 5px;
+    flex-shrink: 1;
+    flex-grow: 1;
   }
 }
 
