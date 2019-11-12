@@ -10,6 +10,30 @@
   position: relative;
   width: 100%;
 
+  &.btn, &.cbi-button {
+    padding-right: 0;
+    padding-left: 28px;
+    @media screen and (min-width: $breakpoint-sm) {
+      padding-left: 10px;
+    }
+
+    & > ul:not(.dropdown) {
+      & > li {
+        justify-content: center;
+      }
+    }
+
+    & > ul.dropdown {
+      color: $base-font-color;
+    }
+
+    & > .open {
+      margin-left: 10px;
+      border-left: 1px solid;
+      padding: 0 10px;
+    }
+  }
+
   label {
     margin: 0 !important;
   }
@@ -132,9 +156,8 @@
   border-left: 1px solid $color-gray-lighten-50;
 }
 
-.cbi-dropdown[open] {
+.cbi-dropdown:not(.btn):not(.cbi-button)[open] {
   @include input-shadow;
-
   border: solid 1px $color-blue-base;
 }
 
@@ -156,6 +179,14 @@
     min-width: 100%;
     right: auto !important;
     width: auto;
+  }
+}
+
+.cbi-dropdown.btn[open] > ul.dropdown,
+.cbi-dropdown.cbi-button[open] > ul.dropdown {
+  @media screen and (min-width: $breakpoint-md) {
+    left: 0 !important;
+    right: 0 !important;
   }
 }
 
