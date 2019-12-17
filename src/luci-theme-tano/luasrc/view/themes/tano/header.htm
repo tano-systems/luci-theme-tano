@@ -1,149 +1,18 @@
 <%
-local sys  = require "luci.sys"
+
 local util = require "luci.util"
+local sys  = require "luci.sys"
 local http = require "luci.http"
 local disp = require "luci.dispatcher"
 
 local boardinfo = util.ubus("system", "board")
-
-local request  = disp.context.path
-local request2 = disp.context.request
-
-local category = request[1]
-local cattree  = category and disp.node(category)
-
-local tree = disp.node()
 local node = disp.context.dispatched
 
-local headers = http.context.headers
-
-local c = tree
-local i, r
-
--- tag all nodes leading to this page
-for i, r in ipairs(request) do
-  if c.nodes and c.nodes[r] then
-    c = c.nodes[r]
-    c.is_active = true
-  end
-end
+local request  = disp.context.path
+local category = request[1]
 
 -- send as HTML5
 http.prepare_content("text/html")
-
-local function nodeurl(prefix, name, query)
-  local u = url(prefix, name)
-
-  if query then
-    u = u .. http.build_querystring(query)
-  end
-
-  return pcdata(u)
-end
-
-function nodeisactive(node, prefix)
-  if node.is_active == true then return true end
-
-  if prefix == table.concat(request2, '/') then
-    return true
-  end
-
-  return false
-end
-
-function render_node(prefix, node)
-  local object = {}
-
-  object.label = striptags(translate(node.title)):gsub("&#34;", "\"")
-  object.isActive = nodeisactive(node, prefix)
-
-  if (type(node.target) == "table" and node.target.type ~= "firstchild") or
-     (type(node.target) == "boolean") or
-     ((type(node.target) == "function") and not next(node.nodes)) or
-     not node.nodes
-  then
-    object.url = nodeurl("", prefix, node.query)
-  end
-
-  local children = disp.node_childs(node)
-  if #children > 0 then
-    local _, req
-    object.children = {}
-    for _, req in ipairs(children) do
-      local child = node.nodes[req]
-      table.insert(object.children, render_node(prefix .. "/" .. req, child, node))
-    end
-  end
-
-  return object
-end
-
-function render_menu_json()
-  if category then
-    write(luci.jsonc.stringify(render_node(category, cattree).children))
-    -- write(luci.jsonc.stringify(cattree.nodes))
-  end
-end
-
-function render_breadcrumbs()
-  local i
-  local r
-  local node = tree
-  local prefix = ""
-
-  if #request2 < 3 then
-    return
-  end
-
-  function render_breadcrumb_item(title, url)
-    write('<li class="breadcrumbs-item">')
-    if url then
-      write('<a href="' .. url .. '">' .. title .. '</a>')
-    else
-      write(title)
-    end
-    write('</li>')
-  end
-
-  write('<ul class="breadcrumbs">')
-
-  for i, r in ipairs(request2) do
-    if node.nodes and node.nodes[r] then
-      node = node.nodes[r]
-
-      if prefix ~= "" then
-        if i == #request2
-           or type(node.target) ~= "table"
-           or node.target.type == "firstchild"
-           or not node.nodes
-           or not next(node.nodes)
-        then
-          -- skip nodes with target == table and target.type == cbi
-          -- last node render always
-          if i == #request2 or
-             (type(node.target) ~= "table" or node.target.type ~= "cbi")
-          then
-            if node.title then
-              render_breadcrumb_item(translate(node.title))
-            else
-              render_breadcrumb_item(r)
-            end
-          end
-        else
-          local url = nodeurl(prefix, r, node.query)
-          render_breadcrumb_item(translate(node.title), url)
-        end
-      end
-
-      prefix = prefix .. '/' .. r
-    else
-      render_breadcrumb_item(r)
-    end
-  end
-
-  write('</ul>')
-end
-
 -%>
 
 <!DOCTYPE html>
@@ -158,7 +27,7 @@ end
     <script src="<%=url('admin/translations', luci.i18n.context.lang)%><%# ?v=PKG_VERSION %>"></script>
     <script type="text/javascript" src="<%= resource %>/cbi.js"></script>
     <script type="text/javascript" src="<%= resource %>/xhr.js"></script>
-    <script type="text/javascript" src="<%= media %>/menu.js"></script>
+    <% include("themes/tano/json-menu") %>
     <link rel="icon" href="<%= media %>/favicon.png">
   </head>
   <body>
@@ -193,7 +62,7 @@ end
       <div class="additional-info">
         <div class="container">
           <%- if not headers or headers["x-luci-login-required"] ~= "yes" then -%>
-            <div class="breadcrumbs-wrapper"><% render_breadcrumbs() %></div>
+            <div class="breadcrumbs-wrapper" id="menu-breadcrumbs"></div>
           <%- end -%>
           <div class="hostname">
             <span class="title"><%:Hostname%>:</span>
@@ -205,12 +74,11 @@ end
     <div class="content">
       <div class="container">
         <%- if category then %>
-          <span id="menu-json"><% render_menu_json() %></span>
           <div class="dn" id="sidemenu"></div>
         <% end %>
         <div id="maincontent" class="main-content">
           <%- if not headers or headers["x-luci-login-required"] ~= "yes" then -%>
-            <%- if luci.sys.process.info("uid") == 0 and luci.sys.user.getuser("root") and not luci.sys.user.getpasswd("root") then -%>
+            <%- if sys.process.info("uid") == 0 and sys.user.getuser("root") and not sys.user.getpasswd("root") then -%>
             <div class="alert-message">
               <h4 align="center"><%:No password set!%></h4>
               <p align="center"><%:There is no password set on this router. Please configure a root password to protect the web interface and enable SSH.%></p>
