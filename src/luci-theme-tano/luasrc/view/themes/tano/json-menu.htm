@@ -131,56 +131,6 @@
 
 	  return ul;
 	};
-/*
-  function render_breadcrumb_item(title, url)
-    write('<li class="breadcrumbs-item">')
-    if url then
-      write('<a href="' .. url .. '">' .. title .. '</a>')
-    else
-      write(title)
-    end
-    write('</li>')
-  end
-
-  write('<ul class="breadcrumbs">')
-
-  for i, r in ipairs(request2) do
-    if node.nodes and node.nodes[r] then
-      node = node.nodes[r]
-
-      if prefix ~= "" then
-        if i == #request2
-           or type(node.target) ~= "table"
-           or node.target.type == "firstchild"
-           or not node.nodes
-           or not next(node.nodes)
-        then
-          -- skip nodes with target == table and target.type == cbi
-          -- last node render always
-          if i == #request2 or
-             (type(node.target) ~= "table" or node.target.type ~= "cbi")
-          then
-            if node.title then
-              render_breadcrumb_item(translate(node.title))
-            else
-              render_breadcrumb_item(r)
-            end
-          end
-        else
-          local url = nodeurl(prefix, r, node.query)
-          render_breadcrumb_item(translate(node.title), url)
-        end
-      end
-
-      prefix = prefix .. '/' .. r
-    else
-      render_breadcrumb_item(r)
-    end
-  end
-
-  write('</ul>')
-
-*/
 
 	function get_children(node) {
 		var children = [];
