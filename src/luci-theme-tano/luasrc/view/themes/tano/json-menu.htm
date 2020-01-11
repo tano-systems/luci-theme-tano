@@ -271,6 +271,21 @@
 
 		render_menu(menu.children[0]);
 		render_breadcrumbs(breadcrumbs);
+
+		var sidemenuToggle = document.getElementById("sidemenu-toggle");
+		var sidemenu = document.getElementById("sidemenu");
+		var menuOverlay = document.getElementsByClassName("menu-overlay")[0];
+
+		sidemenuToggle.addEventListener("click", function() {
+			Menu.toggleClass(sidemenu, "dn");
+			Menu.toggleClass(document.body, "menu-opened");
+		});
+
+		if (menuOverlay) {
+			menuOverlay.addEventListener("click", function() {
+				sidemenuToggle.click();
+			});
+		}
 	});
 })();
 </script>
