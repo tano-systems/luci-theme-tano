@@ -156,6 +156,12 @@ div[id *= "-ifc-description"] {
   }
 }
 
+/* Zone badges in firewall rules table cells */
+#cbi-firewall .td .zonebadge {
+  display: inline-block;
+  padding: 0px 4px;
+}
+
 .zone-forwards {
   display: flex;
   justify-content: space-between;
