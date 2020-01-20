@@ -160,6 +160,7 @@ div[id *= "-ifc-description"] {
 #cbi-firewall .td .zonebadge {
   display: inline-block;
   padding: 0px 4px;
+  line-height: $base-line-height * 0.9;
 }
 
 .zone-forwards {
