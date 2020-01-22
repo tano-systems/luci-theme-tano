@@ -11,6 +11,7 @@
   width: 100%;
 
   &.btn, &.cbi-button {
+    width: auto;
     padding-right: 0;
     padding-left: 28px;
     @media screen and (min-width: $breakpoint-sm) {
