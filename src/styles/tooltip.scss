@@ -40,4 +40,16 @@
       pointer-events: all;
     }
   }
+
+  /* Chain references tooltips on firewall status page */
+  &.references {
+    .cbi-tooltip {
+      li {
+        white-space: nowrap;
+      }
+      ul {
+        margin-left: 0;
+      }
+    }
+  }
 }
