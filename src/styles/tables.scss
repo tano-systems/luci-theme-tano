@@ -116,3 +116,28 @@
 .tr.drag-over-below {
   border-width: 0 0 2px 0;
 }
+
+/*
+ * Small fixes for tables that are embedded in value fields.
+ * This can be found, for example, in the settings of the
+ * "Exec" plugin of the luci-app-statistics.
+ */
+.cbi-value-field {
+  .cbi-section.cbi-tblsection {
+    margin-top: 10px;
+
+    .table-wrapper {
+      width: 100%;
+
+      .table {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .cbi-section-create.cbi-tblsection-create {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
