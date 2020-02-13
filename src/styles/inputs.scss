@@ -135,7 +135,18 @@ input[type="text"] + select {
   }
 }
 
+/* luci-app-statistics until 12.02.2020 */
 .graph-controls {
   align-items: stretch;
   display: flex;
+}
+
+/* luci-app-statistics after 12.02.2020 */
+.statistics-graph-controls {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  select {
+    max-width: 100% !important;
+  }
 }
