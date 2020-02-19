@@ -55,7 +55,8 @@ a.btn {
 .cbi-button {
   @include button($color-blue-darken-10, $color-blue-base, $color-blue-darken-10);
 
-  &:disabled {
+  &:disabled,
+  &[disabled="true"] {
     @include button($color-gray-lighten-70, $color-gray-lighten-70, $color-gray-lighten-70);
     color: #888;
     fill: #888;
