@@ -21,7 +21,7 @@
     max-width: $content-width * 0.9;
     min-height: 32px;
     min-width: $content-width / 3;
-    padding: 1em 1em 1.3em 1em;
+    padding: 0.5em 1em 1.2em 1em;
     width: 90vw;
 
     pre,
@@ -30,11 +30,15 @@
       white-space: pre-wrap;
     }
 
+    & > pre,
+    & > textarea {
+      margin-bottom: 1em;
+    }
+
     & > * {
       display: block;
       width: 100%;
       line-height: normal;
-      margin-bottom: 0.5em;
     }
   }
 }
