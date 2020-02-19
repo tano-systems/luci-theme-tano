@@ -57,6 +57,7 @@
 
 .tr {
   display: table-row;
+  user-select: auto;
 
   &.placeholder {
     height: 30px;

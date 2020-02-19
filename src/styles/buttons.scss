@@ -9,6 +9,7 @@ input[type="reset"],
 input[type="submit"] {
   @include tooltip-shadow;
 
+  user-select: none;
   align-items: center;
   border: none;
   border-radius: 3px;

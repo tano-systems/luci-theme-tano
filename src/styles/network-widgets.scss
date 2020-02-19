@@ -51,6 +51,7 @@ div[id *= "-ifc-description"] {
 .ifacebox {
   @include tooltip-shadow;
 
+  user-select: none;
   background-color: white;
   display: flex;
   flex-direction: column;
