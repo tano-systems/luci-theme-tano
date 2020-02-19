@@ -9,8 +9,7 @@
 
   @include alert($color-gray-lighten-30, $color-gray-lighten-70, $color-gray-lighten-30);
 
-  a,
-  abbr {
+  a {
     color: $color-gray-lighten-10;
   }
 
