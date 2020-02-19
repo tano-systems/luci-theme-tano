@@ -18,6 +18,7 @@ div[id *= "-ifc-description"] {
   display: flex;
   flex-direction: row;
   padding: 0 8px;
+  white-space: nowrap;
 
   img {
     align-self: center;
