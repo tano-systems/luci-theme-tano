@@ -162,9 +162,16 @@ div[id *= "-ifc-description"] {
   display: inline-block;
   padding: 0px 4px;
   line-height: $base-line-height * 0.9;
+
+  &.zonebadge-empty {
+    padding: 0;
+  }
 }
 
 .zone-forwards {
   display: flex;
-  justify-content: space-between;
+
+  & > span {
+    padding: 0 4px;
+  }
 }
