@@ -54,14 +54,6 @@ a.btn {
 .btn,
 .cbi-button {
   @include button($color-blue-darken-10, $color-blue-base, $color-blue-darken-10);
-
-  &:disabled,
-  &[disabled="true"] {
-    @include button($color-gray-lighten-70, $color-gray-lighten-70, $color-gray-lighten-70);
-    color: #888;
-    fill: #888;
-    cursor: not-allowed;
-  }
 }
 
 .btn.reset,
@@ -72,4 +64,15 @@ a.btn {
 .cbi-button-negative,
 .cbi-section-remove input[type="submit"] {
   @include button($color-red-base, $color-red-lighten-5, $color-red-darken-5);
+}
+
+.btn,
+.cbi-button {
+  &:disabled,
+  &[disabled="true"] {
+    @include button($color-gray-lighten-70, $color-gray-lighten-70, $color-gray-lighten-70);
+    color: #888;
+    fill: #888;
+    cursor: not-allowed;
+  }
 }
