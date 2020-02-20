@@ -15,6 +15,10 @@ select {
   }
 }
 
+select {
+  text-overflow: ellipsis;
+}
+
 textarea {
   font-family: monospace;
   padding: 5px 8px;
