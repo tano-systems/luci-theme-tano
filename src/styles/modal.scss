@@ -21,7 +21,7 @@
     max-width: $content-width * 0.9;
     min-height: 32px;
     min-width: $content-width / 3;
-    padding: 0.5em 1em 1.2em 1em;
+    padding: 1.2em 1em 1.2em 1em;
     width: 90vw;
 
     pre,
@@ -39,6 +39,10 @@
       display: block;
       width: 100%;
       line-height: normal;
+    }
+
+    & > h4 {
+      margin-top: 0;
     }
   }
 }
