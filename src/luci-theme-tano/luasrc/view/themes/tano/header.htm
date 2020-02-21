@@ -11,6 +11,12 @@ local node = disp.context.dispatched
 local request  = disp.context.path
 local category = request[1]
 
+local body_data_path = "login"
+
+if disp.context.authsession and #disp.context.path > 0 then
+	body_data_path = table.concat(disp.context.path, "-")
+end
+
 -- send as HTML5
 http.prepare_content("text/html")
 -%>
@@ -30,7 +36,7 @@ http.prepare_content("text/html")
     <% include("themes/tano/json-menu") %>
     <link rel="icon" href="<%= media %>/favicon.png">
   </head>
-  <body>
+  <body data-path="<%=body_data_path%>">
     <div class="header">
       <div class="container">
         <div class="controls">
