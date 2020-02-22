@@ -216,6 +216,14 @@ ol {
   }
 }
 
+/* Login page customization */
+[data-path="login"] {
+  .main-content {
+    /* No left margin on login page */
+    margin-left: 0;
+  }
+}
+
 .left {
   text-align: left !important;
 }
