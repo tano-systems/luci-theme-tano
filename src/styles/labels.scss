@@ -1,0 +1,29 @@
+@import "variables";
+@import "mixins";
+
+span.label {
+  border: 0;
+  border-radius: $border-radius;
+  margin: 0;
+  padding: 2px 6px;
+
+  @include label($color-gray-lighten-30, $color-gray-lighten-70);
+
+  &.notice,
+  &.info {
+    @include label($color-blue-darken-10, $color-blue-lighten-45);
+  }
+
+  &.warning {
+    @include label($color-orange-darken-10, $color-orange-lighten-40);
+  }
+
+  &.success {
+    @include label($color-green-darken-5, $color-green-lighten-60);
+  }
+
+  &.error,
+  &.danger {
+    @include label($color-red-darken-5, $color-red-lighten-40);
+  }
+}

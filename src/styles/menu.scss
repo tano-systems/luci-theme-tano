@@ -74,13 +74,13 @@
   }
 }
 
-.label-wrapper {
+.menu-label-wrapper {
   align-items: center;
   cursor: pointer;
   display: flex;
   padding: 5px 10px;
 
-  .label {
+  .menu-label {
     color: $color-gray-lighten-20;
     cursor: pointer;
     display: block;
@@ -119,7 +119,7 @@
 }
 
 .menu-container {
-  &.open > .label-wrapper > .icon {
+  &.open > .menu-label-wrapper > .icon {
     transform: rotate(90deg);
   }
 }

@@ -32,3 +32,8 @@
 @mixin input-shadow($shadow-color: $color-blue-base) {
   box-shadow: 0 0 0 1px $shadow-color;
 }
+
+@mixin label($color, $bg-color) {
+  background-color: $bg-color;
+  color: $color;
+}

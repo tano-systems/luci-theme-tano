@@ -315,7 +315,7 @@ ol {
 #xhr_poll_status {
   display: flex;
 
-  .label {
+  .xhr-poll-label {
     display: none;
 
     @media screen and (min-width: $breakpoint-sm) {

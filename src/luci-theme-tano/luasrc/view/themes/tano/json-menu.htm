@@ -19,7 +19,7 @@
 	  this.rootElement.appendChild(overlay);
 	  this.rootElement.appendChild(node);
 
-	  document.querySelectorAll("[data-menu-id='" + this.id + "'] .menu-container > .label-wrapper").forEach(function(label) {
+	  document.querySelectorAll("[data-menu-id='" + this.id + "'] .menu-container > .menu-label-wrapper").forEach(function(label) {
 	    label.addEventListener("click", Menu.toggle);
 	  });
 	};
@@ -58,9 +58,9 @@
 	  var labelWrapper = document.createElement("span");
 	  var text = null;
 	  var icon = document.createElement("span");
-	  var labelClasses = ["label"];
+	  var labelClasses = ["menu-label"];
 
-	  labelWrapper.setAttribute("class", "label-wrapper");
+	  labelWrapper.setAttribute("class", "menu-label-wrapper");
 
 	  if (this.data.children && this.data.children.length) {
 	    icon.setAttribute("class", "icon");
