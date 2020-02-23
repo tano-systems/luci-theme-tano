@@ -1,0 +1,112 @@
+@import "variables";
+@import "mixins";
+
+/* luci-app-opkg customization */
+[data-path="admin-system-opkg"] {
+  #modal_overlay {
+    .modal {
+      label {
+        margin: 8px 0;
+
+        > input[type="checkbox"] {
+          vertical-align: middle;
+          margin-right: 4px;
+          height: inherit;
+        }
+      }
+
+      ul {
+        width: auto;
+
+        &.errors {
+          margin-bottom: 16px;
+        }
+
+        &.deps {
+          padding-right: 16px;
+
+          li {
+            > span {
+              white-space: normal;
+            }
+          }
+
+          span.label {
+            font-weight: bold;
+            font-size: 80%;
+            text-transform: uppercase;
+            padding: 0px 6px;
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .main-content {
+    .table {
+      ins {
+        background-color: #cceeff;
+      }
+    }
+
+    .controls {
+      justify-content: space-between;
+      > div {
+        align-self: flex-start;
+        padding: 0 0 10px 0;
+
+        /* Free space */
+        &:first-child {
+          order: 1;
+        }
+
+        /* Filter */
+        &:nth-child(2) {
+          order: 4;
+          flex-basis: 100%;
+        }
+
+        /* Install URL */
+        &:nth-child(3) {
+          order: 3;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          flex-basis: 100%;
+
+          > button {
+            flex-basis: 120px;
+            flex-grow: 0;
+          }
+        }
+
+        /* Controls */
+        &:nth-child(4) {
+          order: 2;
+          margin-right: -0.125em;
+
+          > button {
+            margin-bottom: 5px;
+          }
+
+          &::after {
+            content: '\00a0';
+          }
+        }
+
+        > button {
+          margin-bottom: 0;
+        }
+
+        &#pager {
+          > button {
+            flex-grow: 0;
+            flex-basis: 50px;
+          }
+        }
+      }
+    }
+  }
+}
