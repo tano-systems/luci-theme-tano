@@ -207,10 +207,6 @@ input[type="radio"] + label {
     text-align: right;
   }
 
-  @media screen and (min-width: $breakpoint-md) {
-    padding: 0 12px;
-  }
-
   form {
     display: inline-block;
   }
@@ -304,19 +300,11 @@ input[type="radio"] + label {
     margin: 0 5px 0 10px;
     width: 100%;
   }
-
-  @media screen and (min-width: $breakpoint-md) {
-    margin-right: 10px;
-  }
 }
 
 .cbi-section-remove {
   margin-top: 10px;
   padding: 10px 0;
-
-  @media screen and (min-width: $breakpoint-md) {
-    margin-right: 10px;
-  }
 }
 
 .cbi-section-node + .cbi-section-remove {
