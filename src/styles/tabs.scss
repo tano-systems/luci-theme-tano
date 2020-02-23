@@ -35,11 +35,11 @@
       display: block;
       font-size: $base-font-size * 1.05;
       font-weight: normal;
-      line-height: 1.8 * $base-line-height;
-      padding: 0 10px;
+      line-height: $base-line-height;
+      padding: 8px 10px;
       text-decoration: none;
       transition: $transition-time;
-      white-space: nowrap;
+      white-space: normal;
       width: 100%;
     }
 
