@@ -9,6 +9,7 @@
   position: absolute;
   transition: opacity $transition-time;
   z-index: 100;
+  left: -10000px;
 
   &.error {
     background-color: $color-red-lighten-10;
@@ -35,6 +36,7 @@
 
   &:hover {
     .cbi-tooltip {
+      left: auto;
       display: flex;
       opacity: 1;
       pointer-events: all;
