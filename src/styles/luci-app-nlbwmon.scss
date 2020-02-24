@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+
+div.cbi-section[data-tab="traffic"],
+div.cbi-section[data-tab="layer7"],
+div.cbi-section[data-tab="ipv6"] {
+  > div.head {
+    margin-bottom: 20px;
+  }
+}
