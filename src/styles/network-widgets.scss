@@ -176,3 +176,7 @@ div[id *= "-ifc-description"] {
     padding: 0 4px;
   }
 }
+
+#cbi-network-interface .table .td {
+  vertical-align: top !important;
+}
