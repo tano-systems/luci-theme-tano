@@ -302,6 +302,24 @@ input[type="radio"] + label {
   }
 }
 
+/* Fix cbi-section-create in DHCP-server tab
+ * at network interface configuration */
+div#cbi-dhcp-dhcp {
+  margin-top: 0;
+
+  & > .cbi-section-create {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-left: 0;
+    margin-top: 0;
+
+    & > p {
+      margin-bottom: 5px;
+    }
+  }
+}
+
 .cbi-section-remove {
   margin-top: 10px;
   padding: 10px 0;
