@@ -151,6 +151,11 @@
   &[empty] > ul {
     max-width: 1px;
   }
+
+  &:focus {
+    @include input-shadow;
+    border: solid 1px $color-blue-base;
+  }
 }
 
 .cbi-dropdown > ul > li[display]:not([display="0"]) {
