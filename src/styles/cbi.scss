@@ -308,14 +308,17 @@ div#cbi-dhcp-dhcp {
   margin-top: 0;
 
   & > .cbi-section-create {
-    flex-flow: column;
-    justify-content: flex-start;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: baseline;
     margin-left: 0;
     margin-top: 0;
 
     & > p {
       margin-bottom: 5px;
+      flex-basis: 100%;
+      text-align: center;
     }
   }
 }
