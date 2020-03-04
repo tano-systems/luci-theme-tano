@@ -97,6 +97,51 @@
   }
 }
 
+/* Wireless pages/modals fixes */
+#cbi-wireless > .cbi-section {
+  margin-top: -20px;
+
+  .cbi-section {
+    .cbi-value[data-name="_freq"] {
+      .cbi-value-title {
+        br {
+          display: none;
+        }
+      }
+
+      .cbi-value-field > div {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+
+        label {
+          display: flex;
+          flex-flow: column;
+          width: 100%;
+          margin-bottom: 4px;
+
+          select {
+            flex-basis: auto;
+          }
+        }
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .cbi-value[data-name="txpower"] {
+      .cbi-value-field > div {
+        & > span {
+          flex-basis: 100%;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
 .cbi-progressbar {
   @include tooltip-shadow;
   background-color: $color-gray-lighten-70;

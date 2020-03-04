@@ -39,6 +39,10 @@
       display: block;
       width: 100%;
       line-height: normal;
+
+      &.table {
+        display: table;
+      }
     }
 
     & > h4 {
