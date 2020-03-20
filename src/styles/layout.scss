@@ -460,7 +460,11 @@ ol {
   }
 }
 
-.net-diag-output,
+.net-diag-output {
+  width: 100%;
+  overflow-x: auto;
+}
+
 #diag-rc-output {
   width: 100%;
 
