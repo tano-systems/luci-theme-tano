@@ -2,10 +2,11 @@
 @import "mixins";
 
 .alert-message {
-  border: solid 1px;
+  border: 0;
   border-radius: $border-radius;
-  margin: 5px 0;
+  margin: 8px 0;
   padding: 5px 8px;
+  box-shadow: 0 1px 3px 0 #808080;
 
   @include alert($color-gray-lighten-30, $color-gray-lighten-70, $color-gray-lighten-30);
 
