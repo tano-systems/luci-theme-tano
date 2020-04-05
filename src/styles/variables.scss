@@ -42,6 +42,10 @@ $color-orange-lighten-30: lighten($color-orange-base, 30);
 $color-orange-lighten-40: lighten($color-orange-base, 40);
 $color-orange-darken-10: darken($color-orange-base, 10);
 
+$color-yellow-base: #f4bf00;
+$color-yellow-lighten-32: lighten($color-yellow-base, 32);
+$color-yellow-darken-25: darken($color-yellow-base, 25);
+
 $color-green-base: #018a00;
 $color-green-darken-5: darken($color-green-base, 5);
 $color-green-darken-10: darken($color-green-base, 10);

@@ -23,7 +23,7 @@
   }
 
   &.warning {
-    @include alert($color-orange-darken-10, $color-orange-lighten-40, $color-orange-darken-10);
+    @include alert($color-yellow-darken-25, $color-yellow-lighten-32, $color-yellow-darken-25);
   }
 
   &.success {

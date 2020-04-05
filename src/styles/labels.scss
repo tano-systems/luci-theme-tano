@@ -16,7 +16,7 @@ span.label {
   }
 
   &.warning {
-    @include label($color-orange-darken-10, $color-orange-lighten-40);
+    @include label($color-yellow-darken-25, $color-yellow-lighten-32);
   }
 
   &.success {
