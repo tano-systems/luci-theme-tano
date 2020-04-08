@@ -9,10 +9,6 @@ select {
   height: $input-height;
   padding: 0 10px;
   width: 100%;
-
-  &::placeholder {
-    color: $color-gray-lighten-50;
-  }
 }
 
 select {
@@ -53,6 +49,10 @@ textarea {
     &:focus {
       @include input-shadow($color-red-lighten-10);
     }
+  }
+
+  &::placeholder {
+    color: $color-gray-lighten-50;
   }
 }
 
