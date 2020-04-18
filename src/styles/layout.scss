@@ -300,36 +300,77 @@ ol {
   }
 }
 
-.uci_change_indicator {
-  align-items: center;
-  color: $color-orange-base;
-  display: flex;
-  font-weight: bold;
-  text-decoration: none;
-
-  &:hover {
-    color: #ff9900;
-  }
+span[data-clickable="true"] {
+  cursor: pointer;
 }
 
-#xhr_poll_status {
+
+div.header #indicators {
   display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-evenly;
 
-  .xhr-poll-label {
-    display: none;
+  @media screen and (min-width: $breakpoint-lg) {
+    justify-content: flex-end;
+  }
 
-    @media screen and (min-width: $breakpoint-sm) {
-      color: $color-gray-lighten-30;
-      cursor: pointer;
-      display: block;
+  span[data-indicator] {
+    margin-left: 8px;
+    margin-right: 8px;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      margin-left: 20px;
+      margin-right: 0;
+    }
+
+    &[data-indicator="poll-status"] {
+      order: 1;
+      @media screen and (min-width: $breakpoint-lg) {
+        order: 2;
+      }
+
+      .xhr-poll-status {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: nowrap;
+
+        .xhr-poll-label {
+          display: none;
+          @media screen and (min-width: $breakpoint-sm) {
+            color: $color-gray-lighten-30;
+            display: block;
+            font-weight: bold;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    &[data-indicator="uci-changes"] {
+      order: 2;
+      @media screen and (min-width: $breakpoint-lg) {
+        order: 1;
+      }
+      align-items: center;
+      color: $color-orange-base;
+      display: flex;
       font-weight: bold;
-      margin-left: 8px;
+      text-decoration: none;
+
+      &:hover {
+        color: #ff9900;
+      }
+    }
+
+    &[data-clickable="true"] {
+      cursor: pointer;
     }
   }
 }
 
-#xhr_poll_status_on,
-#xhr_poll_status_off {
+.xhr-poll-status-active,
+.xhr-poll-status-inactive {
   align-items: center;
   color: #ffffff;
   cursor: pointer;
@@ -363,7 +404,7 @@ ol {
   }
 }
 
-#xhr_poll_status_off {
+.xhr-poll-status-inactive {
   .bar {
     background-color: $color-gray-lighten-30;
     border: solid 1px $color-gray-lighten-30;
@@ -380,7 +421,7 @@ ol {
   }
 }
 
-#xhr_poll_status_on {
+.xhr-poll-status-active {
   .bar {
     background-color: $color-green-base;
     border: solid 1px $color-green-base;
