@@ -309,15 +309,15 @@ div.header #indicators {
   display: flex;
   flex-grow: 1;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 
   @media screen and (min-width: $breakpoint-lg) {
     justify-content: flex-end;
   }
 
   span[data-indicator] {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 20px;
+    margin-right: 0;
 
     @media screen and (min-width: $breakpoint-lg) {
       margin-left: 20px;
@@ -353,13 +353,25 @@ div.header #indicators {
         order: 1;
       }
       align-items: center;
-      color: $color-orange-base;
+      color: #fff;
       display: flex;
       font-weight: bold;
       text-decoration: none;
+      background-color: $color-orange-base;
+      border-radius: 10px;
+      padding: 2px 10px;
+      box-shadow: 0 1px 3px 0 grey;
 
       &:hover {
-        color: #ff9900;
+        background-color: #ff9900;
+      }
+
+      .uci-changes-label {
+        display: none;
+        margin-right: 4px;
+        @media screen and (min-width: $breakpoint-sm) {
+          display: inline-block;
+        }
       }
     }
 

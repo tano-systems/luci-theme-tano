@@ -45,6 +45,15 @@ http.prepare_content("text/html")
               E('span', { 'class': 'xhr-poll-label'}, _('Auto Refresh'))
             ]);
           });
+          ui.setIndicatorCustomRenderFn('uci-changes', function(id, label, style) {
+            var n = label.match(/\d+/);
+            if (n === null)
+              return E('div', {});
+            return E('div', { 'class': 'uci-changes' }, [
+              E('span', { 'class': 'uci-changes-label' }, _('Unsaved Changes') + ':'),
+              E('span', { 'class': 'uci-changes-number' }, n[0])
+            ]);
+          });
         });
       });
     </script>
