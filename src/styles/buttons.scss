@@ -76,3 +76,11 @@ a.btn {
     cursor: not-allowed;
   }
 }
+
+input.cbi-input-text[disabled] + button[aria-label].cbi-button, /* CIDR switch buttons */
+.cbi-dynlist[disabled] .cbi-button {
+  @include button($color-gray-lighten-70, $color-gray-lighten-70, $color-gray-lighten-70);
+  color: #888;
+  fill: #888;
+  cursor: not-allowed;
+}

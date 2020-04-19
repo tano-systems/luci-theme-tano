@@ -83,6 +83,8 @@ select[disabled] {
   cursor: not-allowed;
 }
 
+.cbi-dropdown[disabled],
+.cbi-dynlist[disabled] .item,
 input[readonly],
 select[readonly],
 textarea[readonly],
@@ -96,6 +98,10 @@ textarea[disabled] {
     border-color: $color-gray-lighten-60;
     box-shadow: none;
   }
+}
+
+.cbi-dynlist[disabled] .item::after {
+  background-color: $color-gray-lighten-70;
 }
 
 select[multiple] {
