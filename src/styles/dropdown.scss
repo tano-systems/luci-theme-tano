@@ -134,6 +134,7 @@
     line-height: $cbi-dropdown-height;
     padding: 0 5px;
     text-align: center;
+    font-size: $base-font-size * 1.4;
 
     &:focus {
       outline: none;
