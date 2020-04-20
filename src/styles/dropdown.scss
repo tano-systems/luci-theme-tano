@@ -159,8 +159,8 @@
   }
 }
 
-.cbi-dropdown > ul > li[display]:not([display="0"]) {
-  border-left: 1px solid $color-gray-lighten-50;
+.cbi-dropdown > ul:not(.dropdown) > li[display]:not([display="0"]) {
+  border-left: 1px solid $color-gray-lighten-70;
 }
 
 .cbi-dropdown:not(.btn):not(.cbi-button)[open] {
