@@ -81,6 +81,7 @@ button,
 }
 
 input.cbi-input-text[disabled] + button[aria-label].cbi-button, /* CIDR switch buttons */
+input.cbi-input-password[disabled] + button[aria-label].cbi-button, /* Password show/hide buttons */
 .cbi-dynlist[disabled] .cbi-button {
   @include button($color-gray-lighten-70, $color-gray-lighten-70, $color-gray-lighten-70);
   color: #888;
