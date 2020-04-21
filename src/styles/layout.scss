@@ -216,6 +216,11 @@ ol {
   }
 }
 
+/* Fix wrapping in UI error messages */
+.main-content > .alert-message.fade-in > div > pre {
+  white-space: pre-wrap;
+}
+
 /* Login page customization */
 [data-path="login"] {
   .main-content {
