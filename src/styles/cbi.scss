@@ -60,6 +60,7 @@
 
 .cbi-value-description,
 .cbi-map-descr,
+.cbi-tab-descr,
 .cbi-section-descr {
   color: $color-gray-lighten-40;
   margin-bottom: 8px;
@@ -67,6 +68,7 @@
 }
 
 .cbi-section-descr,
+.cbi-tab-descr,
 .cbi-map-descr {
   line-height: $base-font-size * 1.3;
 }
