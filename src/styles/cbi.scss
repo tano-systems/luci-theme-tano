@@ -237,6 +237,17 @@
   }
 }
 
+/* Remove top padding for CBI.ButtonValue widgets */
+.cbi-value {
+  &[data-widget="CBI.ButtonValue"] {
+    .cbi-value-field {
+      & > :first-child {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
 .cbi-upload-info {
   color: $color-green-lighten-5;
   margin: 7px 0 5px 0;
