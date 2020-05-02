@@ -534,3 +534,8 @@ div.header #indicators {
     padding: 5px 10px;
   }
 }
+
+.control-group {
+  display: flex;
+  flex-basis: 100%;
+}
