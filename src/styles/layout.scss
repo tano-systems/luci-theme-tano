@@ -535,7 +535,12 @@ div.header #indicators {
   }
 }
 
-.control-group {
+.control-group:not(.cbi-page-actions) {
   display: flex;
   flex-basis: 100%;
+
+  button,
+  .cbi-button {
+    margin-right: 4px;
+  }
 }
