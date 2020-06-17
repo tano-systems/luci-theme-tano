@@ -29,5 +29,5 @@
     "url": "ssh://git@git.tano-systems.com:8892/tano/luci-theme-tano.git"
   },
   "author": "Victor Polotebnov",
-  "license": "Private"
+  "license": "MIT"
 }
