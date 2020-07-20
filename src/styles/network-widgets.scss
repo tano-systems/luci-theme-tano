@@ -44,6 +44,33 @@ div[id *= "-ifc-description"] {
   }
 }
 
+#cbi-wireless-wifi-device {
+  .ifacebadge {
+    > span {
+      padding: 0;
+    }
+  }
+}
+
+.table.assoclist .tr:not(.table-titles) .td {
+  vertical-align: top;
+  > .ifacebadge {
+    white-space: normal;
+    > span {
+      line-height: 1.2;
+      padding: 4px 0;
+    }
+  }
+
+  &:nth-child(1) {
+    white-space: normal;
+  }
+
+  &:nth-child(5) {
+    white-space: nowrap;
+  }
+}
+
 .cbi-value-field > .ifacebadge {
   width: 100%;
 }
