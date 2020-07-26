@@ -237,7 +237,7 @@ return baseclass.extend({
 
 		if (!node.action ||
 		     node.action.recurse ||
-		    (node.action.type == 'alias') ||
+		    ((node.action.type == 'alias') && (node.children.length > 0)) ||
 		    (node.action.type == "firstchild"))
 			node.url = null;
 
