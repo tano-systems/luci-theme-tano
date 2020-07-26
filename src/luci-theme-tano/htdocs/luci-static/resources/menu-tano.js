@@ -177,7 +177,9 @@ return baseclass.extend({
 
 			activeNode = activeNode.children[L.env.dispatchpath[i]];
 			activeNode.isActive = true;
-			breadcrumbs.push(activeNode);
+
+			if (activeNode.title)
+				breadcrumbs.push(activeNode);
 		}
 
 		if (!i)
