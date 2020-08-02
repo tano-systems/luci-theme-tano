@@ -61,6 +61,30 @@ input[type="checkbox"] {
   margin: 0;
 }
 
+.cbi-value-field {
+  .cbi-checkbox {
+    height: auto;
+    display: flex;
+
+    > label {
+      width: auto;
+    }
+
+    > span {
+      margin-left: 5px;
+      margin-top: 10px;
+      margin-right: 10px;
+      line-height: 1.0;
+      cursor: pointer;
+    }
+  }
+
+  /* support for 'vertical' orientation */
+  br + .cbi-checkbox {
+    flex-basis: 100%;
+  }
+}
+
 input[type="radio"] {
   margin: 0;
 }
