@@ -56,6 +56,13 @@ textarea {
   }
 }
 
+.cbi-input-invalid {
+  > button.btn,
+  > .cbi-filebrowser {
+    border: solid 1px $color-red-lighten-10;
+  }
+}
+
 input[type="checkbox"] {
   height: $input-height;
   margin: 0;
