@@ -59,9 +59,11 @@
           text-overflow: ellipsis;
         }
 
-        &.name > a,
-        &.mtime {
-          margin-right: 8px;
+        &.name, &.mtime {
+          margin: .1em 8px .1em 0;
+        }
+
+        &.name > a {
           font-weight: normal;
         }
 
@@ -70,7 +72,7 @@
           margin-right: 4px;
 
           > button {
-            margin: .1em 0 0 .25em;
+            margin: .1em 0 .1em .25em;
             padding: 0 6px 0 6px;
             height: 16px;
             line-height: 16px;
