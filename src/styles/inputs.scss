@@ -63,6 +63,13 @@ textarea {
   }
 }
 
+span.cbi-input-invalid {
+  border: solid 1px $color-red-lighten-10;
+  border-radius: $border-radius;
+  color: $color-red-lighten-10;
+  padding: 3px 6px;
+}
+
 input[type="checkbox"] {
   height: $input-height;
   margin: 0;
