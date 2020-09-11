@@ -139,6 +139,7 @@ ol {
   background-color: #ffffff;
   border-top: solid 1px $color-gray-lighten-70;
   display: flex;
+  flex-direction: column;
   height: $header-controls-height;
   justify-content: center;
   margin-top: 50px;
@@ -232,14 +233,17 @@ ol {
 
 .left {
   text-align: left !important;
+  justify-content: flex-start !important;
 }
 
 .right {
   text-align: right !important;
+  justify-content: flex-end !important;
 }
 
 .center {
   text-align: center !important;
+  justify-content: center !important;
 }
 
 .top {
@@ -340,6 +344,7 @@ div.header #indicators {
         display: flex;
         flex-flow: row;
         flex-wrap: nowrap;
+        align-items: center;
 
         .xhr-poll-label {
           display: none;
@@ -414,6 +419,7 @@ div.header #indicators {
     justify-content: center;
     position: absolute;
     width: 28px;
+    top: -6px;
 
     svg {
       height: 18px;
@@ -456,25 +462,6 @@ div.header #indicators {
   }
 }
 
-.iptables-actions {
-  text-align: right;
-
-  form {
-    display: flex;
-    flex-direction: column;
-    position: static !important;
-
-    @media screen and (min-width: $breakpoint-sm) {
-      display: block;
-    }
-
-    input[type="button"],
-    input[type="submit"] {
-      margin-bottom: 5px;
-    }
-  }
-}
-
 .add-item {
   display: flex;
 }
@@ -487,7 +474,7 @@ div.header #indicators {
 #cbi-system-system {
   .cbi-value-field {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     #localtime {
       background-color: $color-gray-lighten-70;
@@ -538,10 +525,12 @@ div.header #indicators {
 
 .control-group:not(.cbi-page-actions) {
   display: flex;
+  flex-wrap: wrap;
   flex-basis: 100%;
 
   button,
   .cbi-button {
     margin-right: 4px;
+    margin-bottom: 5px;
   }
 }

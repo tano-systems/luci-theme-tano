@@ -183,16 +183,23 @@ input[type="text"] + select {
   }
 }
 
-/* luci-app-statistics until 12.02.2020 */
-.graph-controls {
-  align-items: stretch;
-  display: flex;
-}
-
-/* luci-app-statistics after 12.02.2020 */
+/* luci-app-statistics after 11.09.2020 */
 .statistics-graph-controls {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+  }
+
+  button {
+    min-width: 200px;
+    margin-left: 8px;
+  }
 
   select {
     max-width: 100% !important;

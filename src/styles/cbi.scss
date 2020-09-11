@@ -266,8 +266,9 @@ input[type="radio"] + label {
 
   @media screen and (min-width: $breakpoint-sm) {
     border-radius: 3px;
-    display: block;
-    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
   form {
@@ -276,6 +277,7 @@ input[type="radio"] + label {
 
   .cbi-button {
     width: 100%;
+    display: inline-flex;
 
     @media screen and (min-width: $breakpoint-sm) {
       width: auto;
@@ -287,7 +289,8 @@ input[type="radio"] + label {
     margin-top: 5px;
 
     @media screen and (min-width: $breakpoint-sm) {
-      margin-left: 3px;
+      margin-left: 6px;
+      margin-top: 0;
     }
   }
 }

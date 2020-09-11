@@ -47,8 +47,8 @@
     }
 
     > li {
-      display: grid;
-      grid-template-columns: minmax(200px, 100%) 120px 200px;
+      display: flex;
+      flex-direction: row;
 
       &:hover {
         background: #f5f5f5;
@@ -58,6 +58,11 @@
         &:first-child {
           overflow: hidden;
           text-overflow: ellipsis;
+        }
+
+        &.name {
+          flex-basis: 200px;
+          min-width: 200px;
         }
 
         &.name, &.mtime {
@@ -71,6 +76,7 @@
         &:last-child {
           text-align: right;
           margin-right: 4px;
+          margin-left: auto;
 
           > button {
             margin: .1em 0 .1em .25em;

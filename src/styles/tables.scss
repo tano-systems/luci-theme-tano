@@ -33,7 +33,7 @@
   vertical-align: middle;
 
   @media screen and (min-width: $breakpoint-md) {
-    min-width: unset;
+    min-width: auto;
   }
 
   &[width="33%"] {
