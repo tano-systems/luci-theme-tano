@@ -423,3 +423,24 @@ div#cbi-dhcp-dhcp {
     color: $color-red-lighten-10;
   }
 }
+
+.cbi-radio {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+
+  > input[type="radio"] {
+    margin-top: 9px;
+  }
+
+  > label {
+    display: none !important;
+  }
+
+  > span {
+    flex-basis: 100%;
+    margin-left: 6px;
+    cursor: pointer;
+    margin-top: 7px;
+  }
+}
