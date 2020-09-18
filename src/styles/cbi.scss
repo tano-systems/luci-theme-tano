@@ -345,6 +345,15 @@ input[type="radio"] + label {
       border-color: $color-red-lighten-10;
     }
   }
+
+  &.cbi-input-invalid {
+    > div {
+      > input[type="text"],
+      > div.cbi-button {
+        border: solid 1px $color-red-lighten-10;
+      }
+    }
+  }
 }
 
 .cbi-optionals,
