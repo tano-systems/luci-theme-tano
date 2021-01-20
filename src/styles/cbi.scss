@@ -86,17 +86,31 @@
 .cbi-section {
   margin-top: 20px;
 
-  legend {
+  legend,
+  h3 {
     border-bottom: solid 2px $color-blue-base;
     font-size: $base-font-size * 1.2;
     line-height: $base-line-height * 1.2;
     margin: 10px 0;
     padding: 5px 0;
     width: 100%;
+    font-weight: normal;
   }
 
   h3 {
     margin-bottom: 5px;
+  }
+}
+
+/* Keep old styles for h3 on overview page */
+[data-path="admin-status-overview"] {
+  .cbi-section {
+    h3 {
+      @include h(1.4);
+      border-bottom: none;
+      margin-bottom: 5px;
+      padding: 0;
+    }
   }
 }
 
