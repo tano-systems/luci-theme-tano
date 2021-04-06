@@ -116,9 +116,12 @@ textarea[disabled] {
   cursor: text;
 }
 
+.cbi-dropdown[disabled],
+.cbi-dynlist[disabled] .item,
 select[readonly],
 select[disabled] {
   cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .cbi-dropdown[disabled],
@@ -131,6 +134,7 @@ select[disabled],
 textarea[disabled] {
   background-color: $color-gray-lighten-70;
   border-color: $color-gray-lighten-60;
+  opacity: 0.7;
 
   &:focus {
     border-color: $color-gray-lighten-60;
@@ -140,6 +144,7 @@ textarea[disabled] {
 
 .cbi-dynlist[disabled] .item::after {
   background-color: $color-gray-lighten-70;
+  opacity: 0.7;
 }
 
 select[multiple] {
