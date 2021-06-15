@@ -62,7 +62,7 @@
       display: none;
       flex-grow: 1;
       flex-shrink: 1;
-      height: $cbi-dropdown-height;
+      min-height: $cbi-dropdown-height;
       overflow: hidden;
       padding: 0 8px;
       text-overflow: ellipsis;
