@@ -52,6 +52,25 @@ div[id *= "-ifc-description"] {
   }
 }
 
+/* Interface badges in the table on network devices page */
+#cbi-network-device {
+  td > .ifacebadge {
+    display: inline-block;
+    width: auto;
+    padding: 0;
+
+    border: 0;
+    @include tooltip-shadow;
+
+    > .cbi-tooltip-container {
+      padding: 0;
+      > img {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
 .table.assoclist .tr:not(.table-titles) .td {
   vertical-align: top;
   > .ifacebadge {
