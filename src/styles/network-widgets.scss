@@ -42,6 +42,15 @@ div[id *= "-ifc-description"] {
   > span {
     padding: 5px 10px;
   }
+
+  &.port-status-link {
+    border: none;
+    padding: 0;
+
+    > img {
+      margin-left: 0;
+    }
+  }
 }
 
 #cbi-wireless-wifi-device {
