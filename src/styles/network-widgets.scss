@@ -84,6 +84,7 @@ div[id *= "-ifc-description"] {
   flex-direction: column;
   margin: $ifacebox-margin;
   overflow: hidden;
+  border-radius: $border-radius;
 
   .ifacebadge {
     border: none;
