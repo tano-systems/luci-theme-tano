@@ -11,6 +11,8 @@
   z-index: 999;
   left: -10000px;
 
+  @include tooltip-shadow;
+
   &.error {
     background-color: $color-red-lighten-10;
     border-color: $color-red-darken-10;
@@ -22,13 +24,12 @@
   cursor: help;
 
   .cbi-tooltip {
-    @include tooltip-shadow;
-
-    border: solid 1px $color-gray-lighten-60;
+    border: none;
     cursor: default;
     pointer-events: none;
 
     &.ifacebadge {
+      border-radius: $border-radius;
       background-color: #ffffff;
       flex-direction: row;
     }
