@@ -52,22 +52,29 @@ div[id *= "-ifc-description"] {
   }
 }
 
-/* Interface badges in the table on network devices page */
-#cbi-network-device {
-  td > .ifacebadge {
-    display: inline-block;
-    width: auto;
+/* Interface badges in the table on network devices page
+ * Interface badges in the bridge VLAN table */
+#cbi-network-device td > .ifacebadge,
+#cbi-network-bridge-vlan .ifacebadge.port-status-device {
+  display: inline-block;
+  width: auto;
+  border: 0;
+  padding: 0 10px;
+
+  @include tooltip-shadow;
+
+  > span {
     padding: 0;
+  }
 
-    border: 0;
-    @include tooltip-shadow;
+  > .cbi-tooltip-container {
+    padding: 0;
+  }
 
-    > .cbi-tooltip-container {
-      padding: 0;
-      > img {
-        margin-right: 0;
-      }
-    }
+  > img,
+  .cbi-tooltip-container > img {
+    margin-right: 10px;
+    margin-left: 0px;
   }
 }
 
