@@ -56,6 +56,18 @@
   font-weight: bold;
 }
 
+th[data-sortable-row] {
+  cursor: pointer;
+
+  &[data-sort-direction="asc"]::after {
+    content: "\a0\25b2";
+  }
+
+  &[data-sort-direction="desc"]::after {
+    content: "\a0\25bc";
+  }
+}
+
 .tr {
   display: table-row;
   user-select: auto;
