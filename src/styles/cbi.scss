@@ -373,9 +373,19 @@ input[type="radio"] + label {
 .cbi-optionals,
 .cbi-section-create {
   display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 
   @media screen and (min-width: $breakpoint-md) {
     margin-left: $cbi-title-width + 16px;
+  }
+
+  button {
+    flex-grow: 1;
+
+    @media screen and (min-width: $breakpoint-md) {
+      flex-grow: 0;
+    }
   }
 }
 

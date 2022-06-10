@@ -156,3 +156,23 @@ th[data-sortable-row] {
     margin-bottom: 8px;
   }
 }
+
+/* Tweaks for WireGuard peers table */
+div[data-name="_peers"] {
+  .ifacebadge {
+    display: inline;
+  }
+
+  .cbi-value-field>:not([id]):not([class]):first-child {
+    padding-top: 0;
+  }
+
+  table > tr > td {
+    vertical-align: top;
+
+    /* Peer description (title) */
+    > p {
+      margin: 0;
+    }
+  }
+}

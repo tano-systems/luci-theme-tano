@@ -88,3 +88,16 @@ input.cbi-input-password[disabled] + button[aria-label].cbi-button, /* Password 
   fill: #888;
   cursor: not-allowed;
 }
+
+/* Special tweaks for WireGuard protocol QR-code generation button */
+.btn.qr-code {
+  svg {
+    fill: #fff;
+    background-color: inherit;
+    path {
+      &:first-of-type {
+        display: none;
+      }
+    }
+  }
+}
