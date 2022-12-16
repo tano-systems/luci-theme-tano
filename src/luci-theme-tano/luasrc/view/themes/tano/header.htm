@@ -77,9 +77,14 @@ http.prepare_content("text/html")
           <%- if not headers or headers["x-luci-login-required"] ~= "yes" then -%>
             <div class="breadcrumbs-wrapper" id="menu-breadcrumbs"></div>
           <%- end -%>
-          <div class="hostname">
-            <span class="title"><%:Hostname%>:</span>
-            <%= striptags(boardinfo.hostname or "?") %>
+          <div class="hostname-container">
+            <%- if boardinfo.rootfs_type == "initramfs" then -%>
+            <span class="ramdisk-indicator" title="<%:System running in RAM-disk mode. No changes to settings will be stored and are lost after rebooting.%>"><%:RAMFS%></span>
+            <%- end -%>
+            <div class="hostname">
+              <span class="title"><%:Hostname%>:</span>
+              <%= striptags(boardinfo.hostname or "?") %>
+            </div>
           </div>
         </div>
       </div>

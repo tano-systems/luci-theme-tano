@@ -294,18 +294,37 @@ ol {
     overflow-x: auto;
   }
 
-  .hostname {
-    align-items: center;
+  .hostname-container {
     display: flex;
-    font-family: monospace;
-    font-size: $input-font-size;
-    margin-left: $header-additional-info-spacing;
-    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
 
-    .title {
-      color: $color-gray-lighten-50;
-      font-family: $base-font-family;
-      margin-right: 5px;
+    .ramdisk-indicator {
+      height: 18px;
+      line-height: 18px;
+      margin-left: 8px;
+      color: #000000;
+      background-color: #ffe998;
+      padding: 0px 6px;
+      border-radius: $border-radius;
+      border: 1px solid #aaaaaa;
+      font-size: 90%;
+      cursor: help;
+    }
+
+    .hostname {
+      align-items: center;
+      display: flex;
+      font-family: monospace;
+      font-size: $input-font-size;
+      margin-left: $header-additional-info-spacing;
+      overflow-x: auto;
+
+      .title {
+        color: $color-gray-lighten-50;
+        font-family: $base-font-family;
+        margin-right: 5px;
+      }
     }
   }
 }
