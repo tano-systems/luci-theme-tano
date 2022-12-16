@@ -42,7 +42,7 @@ http.prepare_content("text/html")
               E('span', { 'class': 'xhr-poll-status-' + style }, [
                 circle, E('span', { 'class': 'bar' })
               ]),
-              E('span', { 'class': 'xhr-poll-label'}, _('Auto Refresh'))
+              E('span', { 'class': 'xhr-poll-label'}, '<%:Auto Refresh%>')
             ]);
           });
           ui.setIndicatorCustomRenderFn('uci-changes', function(id, label, style) {
@@ -50,7 +50,7 @@ http.prepare_content("text/html")
             if (n === null)
               return E('div', {});
             return E('div', { 'class': 'uci-changes' }, [
-              E('span', { 'class': 'uci-changes-label' }, _('Unsaved Changes') + ':'),
+              E('span', { 'class': 'uci-changes-label' }, '<%:Unsaved Changes%>:'),
               E('span', { 'class': 'uci-changes-number' }, n[0])
             ]);
           });

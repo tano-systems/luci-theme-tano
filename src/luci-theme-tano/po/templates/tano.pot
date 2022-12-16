@@ -1,0 +1,38 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: luasrc/view/themes/tano/header.htm:45
+msgid "Auto Refresh"
+msgstr ""
+
+#: luasrc/view/themes/tano/header.htm:103
+msgid "Go to password configuration..."
+msgstr ""
+
+#: luasrc/view/themes/tano/header.htm:85
+msgid "Hostname"
+msgstr ""
+
+#: luasrc/view/themes/tano/header.htm:101
+msgid "No password set!"
+msgstr ""
+
+#: luasrc/view/themes/tano/header.htm:82
+msgid "RAMFS"
+msgstr ""
+
+#: luasrc/view/themes/tano/header.htm:82
+msgid ""
+"System running in RAM-disk mode. No changes to settings will be stored and "
+"are lost after rebooting."
+msgstr ""
+
+#: luasrc/view/themes/tano/header.htm:102
+msgid ""
+"There is no password set on this router. Please configure a root password to "
+"protect the web interface and enable SSH."
+msgstr ""
+
+#: luasrc/view/themes/tano/header.htm:53
+msgid "Unsaved Changes"
+msgstr ""

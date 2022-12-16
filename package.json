@@ -22,7 +22,8 @@
   "scripts": {
     "build": "webpack --progress",
     "build_and_deploy": "rm -rf ./dist && webpack --progress && cd ./buildscripts && ./deploy.sh",
-    "bundle": "rm -rf ./dist && webpack --progress && cd ./buildscripts && ./bundle.sh"
+    "bundle": "rm -rf ./dist && webpack --progress && cd ./buildscripts && ./bundle.sh",
+    "i18n": "cd ./src/luci-theme-tano && mkdir -p po/templates && i18n-scan.pl . > po/templates/tano.pot && i18n-update.pl po"
   },
   "repository": {
     "type": "git",
